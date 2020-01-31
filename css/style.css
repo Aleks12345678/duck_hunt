@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @keyframes duckFly {
   0% {
-    left: 150%;
-    top: 10%;
+    left: 99%;
+    top: 30%;
   }
   25% {
     left: 80%;
@@ -13,25 +13,25 @@
     top: 30%;
   }
   75% {
-    left: 30%;
+    left: 0%;
     top: 40%;
   }
   100% {
-    left: -50%;
+    left: 100%;
     top: 10%;
   }
 }
 
 @keyframes duckDie {
   0% {
-    left: -50%;
+    left: 0%;
     top: 100%;
   }
 }
 
 input + label {
   position: absolute;
-  left: -100px;
+  left: 0px;
   z-index: 1;
   width: 36px;
   height: 34px;
@@ -40,11 +40,11 @@ input + label {
   transform: translate(-50%, -50%);
   background: url(../img/duck_light.png) no-repeat left center;
   background-position: -138px 0;
-   cursor: url(../img/snshoot.png) 20 20, text;;
+   cursor: url(../img/snshoot.png) 20 20, text;
 }
 input {
     position: absolute;
-    top: 15px;
+/*    top: -25px;*/
 }
 input:checked + label {
   opacity: 0;
@@ -149,17 +149,18 @@ input:checked + label {
   text-align: center;
   width: 100%;
   z-index: 2;
-  background-color: #fff;
+  color: gold;
+    font-family: Tahoma;
 }
 
 .score:after {
   content: counter(score);
-  display: inline-block;
+  
 }
 
 .score:before {
   content: 'Набранные очки: ';
-  display: inline-block;
+ 
   margin-right: 10px;
 }
 
@@ -167,15 +168,23 @@ input:checked {
   counter-increment: score;
 
 }
-
-.fon {
-    background: url(../img/fon_1024_768.png) center top;
-    cursor: url(../img/snshoot.png) 20 20, text;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 1024px;
-    height: 768px;
+body {
+    margin: 0;
+    
 }
+.fon {
+  background: url(../img/fon_1280_1024.png) center top;
+    cursor: url(../img/snshoot.png) 20 20, text;
+    background-size: 100%; /* Современные браузеры */
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    width: 100%;
+    height: 100vh;
+   
+}
+
+
 /*body {
   margin: 0;
   padding: 0;
@@ -202,48 +211,31 @@ body:before {
 @media screen and (max-device-width: 800px) {
   .fon {
     background: url(../img/fon_411_731.png);
-         background-repeat: no-repeat;
-      width: 411px;
+
   }
-    input {
-        position: absolute;
-            top:15px;
-    }
+    
 }
 /*IPhone 6/7/8*/
 @media screen and (max-device-width: 375px) {
   .fon {
     background: url(../img/fon_375_667.png);
-         background-repeat: no-repeat;
-      width: 380px;
+
+      
   }
-   input {
-        position: absolute;
-        top:15px;
-    }
+   
 }
 /*Galaxy 5*/
 @media screen and (max-device-width: 360px) {
   .fon {
     background: url(../img/fon_360_640.png);
-         background-repeat: no-repeat;
-      width: 360px;
+
   }
-    input {
-        position: absolute;
-        top:15px;
-    }
+    
 }
 /*IPhone 5/5s*/
 @media screen and (max-device-width: 320px) {
   .fon {
     background: url(../img/fon_320_568.png);
-         background-repeat: no-repeat;
-      
-      width: 325px;
   }
-    input {
-        position: absolute;
-        top:15px;
-    }
+    
 }
